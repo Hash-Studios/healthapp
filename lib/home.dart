@@ -88,7 +88,7 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage("assets/images/medicines.jpg")),
+                              image: AssetImage("assets/images/2.png")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -118,7 +118,7 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage("assets/images/assistant.jpg")),
+                              image: AssetImage("assets/images/3.png")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -150,7 +150,7 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage("assets/images/exercise.jpg")),
+                              image: AssetImage("assets/images/4.png")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -187,7 +187,7 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage("assets/images/activity.jpg")),
+                              image: AssetImage("assets/images/5.png")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -217,7 +217,7 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage("assets/images/contact.jpg")),
+                              image: AssetImage("assets/images/6.png")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -246,7 +246,7 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage("assets/images/covid.jpg")),
+                              image: AssetImage("assets/images/1.png")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),

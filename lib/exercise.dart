@@ -161,7 +161,7 @@ class Exercise extends StatelessWidget {
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage("assets/images/arms.jpg")),
+                            image: AssetImage("assets/images/arms.png")),
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffeeeeee)),
                   ),
@@ -186,7 +186,7 @@ class Exercise extends StatelessWidget {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage("assets/images/legs.jpg")),
+                              image: AssetImage("assets/images/legs.png")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -213,7 +213,7 @@ class Exercise extends StatelessWidget {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage("assets/images/abs.jpg")),
+                              image: AssetImage("assets/images/abs.png")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -245,7 +245,7 @@ class Exercise extends StatelessWidget {
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage("assets/images/chest.jpg")),
+                            image: AssetImage("assets/images/chest.png")),
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffeeeeee)),
                   ),
@@ -269,7 +269,7 @@ class Exercise extends StatelessWidget {
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage("assets/images/back.jpg")),
+                            image: AssetImage("assets/images/back.png")),
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffeeeeee)),
                   ),
@@ -293,7 +293,7 @@ class Exercise extends StatelessWidget {
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage("assets/images/shoulders.jpg")),
+                            image: AssetImage("assets/images/shoulders.png")),
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffeeeeee)),
                   ),
