@@ -120,9 +120,6 @@ class Exercise extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                // Spacer(
-                //   flex: 1,
-                // ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(23, 0, 8, 0),
                   child: GestureDetector(
@@ -142,9 +139,6 @@ class Exercise extends StatelessWidget {
                     },
                   ),
                 ),
-                // Spacer(
-                //   flex: 2,
-                // ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: GestureDetector(
@@ -164,9 +158,6 @@ class Exercise extends StatelessWidget {
                     },
                   ),
                 ),
-                // Spacer(
-                //   flex: 1,
-                // ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: GestureDetector(
@@ -205,9 +196,6 @@ class Exercise extends StatelessWidget {
                     },
                   ),
                 ),
-                // Spacer(
-                //   flex: 1,
-                // ),
               ],
             ),
           ),

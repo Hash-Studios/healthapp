@@ -1,8 +1,6 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:healthapp/home.dart';
 import 'package:healthapp/navmenu/menu_dashboard_layout.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
@@ -14,6 +12,7 @@ void main() {
   getApplicationDocumentsDirectory().then(
     (dir) async {
       Hive.init(dir.path);
+      await Hive.openBox('medicines');
       prefs = await Hive.openBox('prefs');
       prefs.put('username', 'Abhay Maurya');
       prefs.put('userImage',
