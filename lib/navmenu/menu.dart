@@ -1,6 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthapp/dialog_flow.dart';
+import 'package:healthapp/exercise.dart';
 import 'package:healthapp/main.dart' as main;
+import 'package:healthapp/medicines.dart';
 
 class Menu extends StatelessWidget {
   final Animation<Offset> slideAnimation;
@@ -58,155 +62,197 @@ class Menu extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        CircleAvatar(
-                          radius: 30,
-                          backgroundImage:
-                              NetworkImage(main.prefs.get('userImage')),
-                          backgroundColor: Colors.grey[200],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 16.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                main.prefs.get('username'),
-                                maxLines: 1,
-                                overflow: TextOverflow.fade,
-                                style: GoogleFonts.montserrat(
-                                  color: Color(0xFF393E46),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 24,
-                                ),
-                              ),
-                              Text(
-                                "Student",
-                                maxLines: 1,
-                                overflow: TextOverflow.fade,
-                                style: GoogleFonts.montserrat(
-                                  color: Color(0xFF393E46),
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ],
+                    GestureDetector(
+                      child: Row(
+                        children: <Widget>[
+                          CircleAvatar(
+                            radius: 30,
+                            backgroundImage:
+                                NetworkImage(main.prefs.get('userImage')),
+                            backgroundColor: Colors.grey[200],
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.only(left: 16.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  main.prefs.get('username'),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.fade,
+                                  style: GoogleFonts.montserrat(
+                                    color: Color(0xFF393E46),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 24,
+                                  ),
+                                ),
+                                Text(
+                                  '${main.prefs.get('age')} years',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.fade,
+                                  style: GoogleFonts.montserrat(
+                                    color: Color(0xFF393E46),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      onTap: () {
+                        onMenuTap();
+                      },
                     ),
                     Spacer(
                       flex: 3,
                     ),
-                    Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20.0),
-                          child: Icon(
-                            Icons.local_hospital,
-                            color: Color(0xFF393E46),
+                    GestureDetector(
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(
+                              Icons.local_hospital,
+                              color: Color(0xFF393E46),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Medicines",
-                          maxLines: 1,
-                          overflow: TextOverflow.fade,
-                          style: GoogleFonts.montserrat(
-                            color: Color(0xFF393E46),
-                            fontSize: 20,
+                          Text(
+                            "Medicines",
+                            maxLines: 1,
+                            overflow: TextOverflow.fade,
+                            style: GoogleFonts.montserrat(
+                              color: Color(0xFF393E46),
+                              fontSize: 20,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                      onTap: () {
+                        onMenuTap();
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => Medicines()));
+                      },
                     ),
                     Spacer(flex: 2),
-                    Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20.0),
-                          child: Icon(
-                            Icons.assistant,
-                            color: Color(0xFF393E46),
+                    GestureDetector(
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(
+                              Icons.assistant,
+                              color: Color(0xFF393E46),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Assistant",
-                          maxLines: 1,
-                          overflow: TextOverflow.fade,
-                          style: GoogleFonts.montserrat(
-                            color: Color(0xFF393E46),
-                            fontWeight: FontWeight.normal,
-                            fontSize: 20,
+                          Text(
+                            "Assistant",
+                            maxLines: 1,
+                            overflow: TextOverflow.fade,
+                            style: GoogleFonts.montserrat(
+                              color: Color(0xFF393E46),
+                              fontWeight: FontWeight.normal,
+                              fontSize: 20,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                      onTap: () {
+                        onMenuTap();
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => CuristAssistant()));
+                      },
                     ),
                     Spacer(flex: 2),
-                    Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20.0),
-                          child: Icon(
-                            Icons.fitness_center,
-                            color: Color(0xFF393E46),
+                    GestureDetector(
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(
+                              Icons.fitness_center,
+                              color: Color(0xFF393E46),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Exercises",
-                          maxLines: 1,
-                          overflow: TextOverflow.fade,
-                          style: GoogleFonts.montserrat(
-                            color: Color(0xFF393E46),
-                            fontWeight: FontWeight.normal,
-                            fontSize: 20,
+                          Text(
+                            "Exercises",
+                            maxLines: 1,
+                            overflow: TextOverflow.fade,
+                            style: GoogleFonts.montserrat(
+                              color: Color(0xFF393E46),
+                              fontWeight: FontWeight.normal,
+                              fontSize: 20,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                      onTap: () {
+                        onMenuTap();
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => Exercise()));
+                      },
                     ),
                     Spacer(flex: 2),
-                    Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20.0),
-                          child: Icon(
-                            Icons.directions_run,
-                            color: Color(0xFF393E46),
+                    GestureDetector(
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(
+                              Icons.directions_run,
+                              color: Color(0xFF393E46),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Activity",
-                          maxLines: 1,
-                          overflow: TextOverflow.fade,
-                          style: GoogleFonts.montserrat(
-                            color: Color(0xFF393E46),
-                            fontWeight: FontWeight.normal,
-                            fontSize: 20,
+                          Text(
+                            "Activity",
+                            maxLines: 1,
+                            overflow: TextOverflow.fade,
+                            style: GoogleFonts.montserrat(
+                              color: Color(0xFF393E46),
+                              fontWeight: FontWeight.normal,
+                              fontSize: 20,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                      onTap: () {
+                        onMenuTap();
+                      },
                     ),
                     Spacer(flex: 2),
-                    Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20.0),
-                          child: Icon(
-                            Icons.bug_report,
-                            color: Color(0xFF393E46),
+                    GestureDetector(
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(
+                              Icons.bug_report,
+                              color: Color(0xFF393E46),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "COVID-19",
-                          maxLines: 1,
-                          overflow: TextOverflow.fade,
-                          style: GoogleFonts.montserrat(
-                            color: Color(0xFF393E46),
-                            fontWeight: FontWeight.normal,
-                            fontSize: 20,
+                          Text(
+                            "COVID-19",
+                            maxLines: 1,
+                            overflow: TextOverflow.fade,
+                            style: GoogleFonts.montserrat(
+                              color: Color(0xFF393E46),
+                              fontWeight: FontWeight.normal,
+                              fontSize: 20,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                      onTap: () {
+                        onMenuTap();
+                      },
                     ),
                     Spacer(flex: 2),
                     SizedBox(
@@ -217,48 +263,58 @@ class Menu extends StatelessWidget {
                       ),
                     ),
                     Spacer(flex: 2),
-                    Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20.0),
-                          child: Icon(
-                            Icons.settings,
-                            color: Color(0xFF393E46),
+                    GestureDetector(
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(
+                              Icons.settings,
+                              color: Color(0xFF393E46),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Settings",
-                          maxLines: 1,
-                          overflow: TextOverflow.fade,
-                          style: GoogleFonts.montserrat(
-                            color: Color(0xFF393E46),
-                            fontWeight: FontWeight.normal,
-                            fontSize: 20,
+                          Text(
+                            "Settings",
+                            maxLines: 1,
+                            overflow: TextOverflow.fade,
+                            style: GoogleFonts.montserrat(
+                              color: Color(0xFF393E46),
+                              fontWeight: FontWeight.normal,
+                              fontSize: 20,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                      onTap: () {
+                        onMenuTap();
+                      },
                     ),
                     Spacer(flex: 2),
-                    Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20.0),
-                          child: Icon(
-                            Icons.help,
-                            color: Color(0xFF393E46),
+                    GestureDetector(
+                      child: Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: Icon(
+                              Icons.help,
+                              color: Color(0xFF393E46),
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Help",
-                          maxLines: 1,
-                          overflow: TextOverflow.fade,
-                          style: GoogleFonts.montserrat(
-                            color: Color(0xFF393E46),
-                            fontWeight: FontWeight.normal,
-                            fontSize: 20,
+                          Text(
+                            "Help",
+                            maxLines: 1,
+                            overflow: TextOverflow.fade,
+                            style: GoogleFonts.montserrat(
+                              color: Color(0xFF393E46),
+                              fontWeight: FontWeight.normal,
+                              fontSize: 20,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                      onTap: () {
+                        onMenuTap();
+                      },
                     ),
                     Spacer(flex: 5),
                   ],
