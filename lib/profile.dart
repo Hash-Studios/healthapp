@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthapp/main.dart' as main;
@@ -25,7 +26,9 @@ class Profile extends StatelessWidget {
       backgroundColor: Color(0xFF76EAD7),
       body: Column(
         children: <Widget>[
-          TopSection(),
+          TopSection(
+            button: false,
+          ),
           Spacer(flex: 1),
           ListButton(
             text: "Personal Details",
@@ -95,8 +98,10 @@ class ListButton extends StatelessWidget {
 }
 
 class TopSection extends StatelessWidget {
-  const TopSection({
+  final bool button;
+  TopSection({
     Key key,
+    @required this.button,
   }) : super(key: key);
 
   @override
@@ -107,16 +112,24 @@ class TopSection extends StatelessWidget {
         Spacer(
           flex: 2,
         ),
-        Hero(
-          tag: "User",
-          child: Container(
-            padding: EdgeInsets.all(8),
-            child: CircleAvatar(
-              backgroundImage: NetworkImage(main.prefs.get('userImage')),
-              backgroundColor: Colors.grey[200],
-              radius: 50,
+        GestureDetector(
+          child: Hero(
+            tag: "User",
+            child: Container(
+              padding: EdgeInsets.all(8),
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(main.prefs.get('userImage')),
+                backgroundColor: Colors.grey[200],
+                radius: 50,
+              ),
             ),
           ),
+          onTap: button
+              ? () {
+                  Navigator.push(context,
+                      CupertinoPageRoute(builder: (context) => Profile()));
+                }
+              : null,
         ),
         Spacer(
           flex: 1,
