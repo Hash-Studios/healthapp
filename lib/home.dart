@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthapp/dialog_flow.dart';
+import 'package:healthapp/exercise.dart';
 import 'package:healthapp/main.dart' as main;
 import 'package:healthapp/profile.dart';
 
@@ -205,26 +206,32 @@ class Home extends StatelessWidget {
                           builder: (context) => CuristAssistant()));
                 },
               ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.258,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffeeeeee)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: Text(
-                      "Exercises",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color(0xff393E46),
-                      ),
+              GestureDetector(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.258,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xffeeeeee)),
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(9.0),
+                      child: Text(
+                        "Exercises",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14,
+                          color: Color(0xff393E46),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      CupertinoPageRoute(builder: (context) => Exercise()));
+                },
               ),
             ],
           ),
