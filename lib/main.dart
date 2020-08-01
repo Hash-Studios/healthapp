@@ -24,7 +24,7 @@ void main() {
       prefs.put('blood', 'O+');
       prefs.put('pulse', '75');
       prefs.put('stepsTotal', '58456');
-      prefs.put('stepsToday', '2546');
+      prefs.put('stepsToday', '0');
       prefs.put('calTotal', '38456');
       prefs.put('calToday', '783');
       SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])

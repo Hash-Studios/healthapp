@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,6 +9,7 @@ import 'package:healthapp/exercise.dart';
 import 'package:healthapp/main.dart' as main;
 import 'package:healthapp/medicines.dart';
 import 'package:healthapp/profile.dart';
+import 'package:pedometer/pedometer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatefulWidget {
@@ -278,11 +281,60 @@ class _HomeState extends State<Home> {
   }
 }
 
-class ActivityRings extends StatelessWidget {
+class ActivityRings extends StatefulWidget {
   const ActivityRings({
     Key key,
   }) : super(key: key);
 
+  @override
+  _ActivityRingsState createState() => _ActivityRingsState();
+}
+
+class _ActivityRingsState extends State<ActivityRings> {
+  Pedometer _pedometer;
+  StreamSubscription<int> _subscription;
+  int stepsToday = int.parse(main.prefs.get("stepsToday"));
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
+
+  @override
+  void dispose() {
+    stopListening();
+    super.dispose();
+  }
+
+  Future<void> initPlatformState() async {
+    startListening();
+  }
+
+  void onData(int stepCountValue) {
+    print(stepCountValue);
+  }
+
+  void startListening() {
+    _pedometer = new Pedometer();
+    _subscription = _pedometer.pedometerStream.listen(_onData,
+        onError: _onError, onDone: _onDone, cancelOnError: true);
+  }
+
+  void stopListening() {
+    _subscription.cancel();
+  }
+
+  void _onData(int stepCountValue) async {
+    setState(() {
+      stepsToday = stepCountValue;
+      main.prefs.put("stepsToday", "$stepCountValue");
+      main.prefs.put("calToday", "${stepCountValue / 3}");
+    });
+  }
+
+  void _onDone() => print("Finished pedometer tracking");
+
+  void _onError(error) => print("Flutter Pedometer Error: $error");
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -295,7 +347,7 @@ class ActivityRings extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: CircularProgressIndicator(
               strokeWidth: 16,
-              value: 0.8,
+              value: stepsToday / 5000,
               valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFC4FB6D)),
             ),
           ),
@@ -307,7 +359,7 @@ class ActivityRings extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: CircularProgressIndicator(
               strokeWidth: 16,
-              value: 0.5,
+              value: stepsToday / 6000,
               valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFEDFFD1)),
             ),
           ),
@@ -336,7 +388,7 @@ class ActivityRings extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: Text(
-                      main.prefs.get('stepsToday'),
+                      "$stepsToday",
                       style: GoogleFonts.montserrat(
                           color: Color(0xFF393E46),
                           fontSize: 20,
@@ -359,7 +411,7 @@ class ActivityRings extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: Text(
-                      "${main.prefs.get('calToday')} CAL",
+                      "${(stepsToday / 3).round()} CAL",
                       style: GoogleFonts.montserrat(
                           color: Color(0xFF393E46),
                           fontSize: 20,
