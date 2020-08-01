@@ -9,7 +9,15 @@ import 'package:healthapp/medicines.dart';
 import 'package:healthapp/profile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  final onMenuTap;
+  Home({this.onMenuTap});
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +26,7 @@ class Home extends StatelessWidget {
         backgroundColor: Color(0xFF76EAD7),
         leading: IconButton(
           icon: Icon(Icons.menu),
-          onPressed: () {},
+          onPressed: widget.onMenuTap,
         ),
         actions: <Widget>[
           GestureDetector(
