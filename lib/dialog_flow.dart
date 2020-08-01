@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'facts_message.dart';
 
@@ -17,23 +18,27 @@ class _CuristAssistantState extends State<CuristAssistant> {
 
   Widget _queryInputWidget(BuildContext context) {
     return Card(
+      color: Color(0xffffffff),
+      elevation: 0,
       margin: EdgeInsets.all(10),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30))),
       child: Padding(
-        padding: const EdgeInsets.only(left: 8.0, right: 8),
+        padding: const EdgeInsets.only(left: 12, right: 0),
         child: Row(
           children: <Widget>[
             Flexible(
               child: TextField(
                 controller: _textController,
                 onSubmitted: _submitQuery,
+                style: GoogleFonts.montserrat(),
                 decoration: InputDecoration.collapsed(
-                    hintText: "Talk to Curist Assistant"),
+                  hintText: "Talk to Curist Assistant",
+                  hintStyle: GoogleFonts.montserrat(),
+                ),
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 4.0),
               child: IconButton(
                   icon: Icon(
                     Icons.send,
@@ -82,13 +87,15 @@ class _CuristAssistantState extends State<CuristAssistant> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff76EAD7),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
           "Curist Assistant",
-          style: TextStyle(color: Color(0xFF76EAD7)),
+          style: GoogleFonts.montserrat(
+              color: Colors.white, fontWeight: FontWeight.w600),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xff76EAD7),
         elevation: 0,
       ),
       body: Column(children: <Widget>[

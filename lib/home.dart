@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthapp/dialog_flow.dart';
 import 'package:healthapp/main.dart' as main;
 
 class Home extends StatelessWidget {
@@ -102,7 +104,7 @@ class Home extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
-                            "2546",
+                            main.prefs.get('stepsToday'),
                             style: GoogleFonts.montserrat(
                                 color: Color(0xFF393E46),
                                 fontSize: 20,
@@ -127,7 +129,7 @@ class Home extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
-                            "783 CAL",
+                            "${main.prefs.get('calToday')} CAL",
                             style: GoogleFonts.montserrat(
                                 color: Color(0xFF393E46),
                                 fontSize: 20,
@@ -167,26 +169,34 @@ class Home extends StatelessWidget {
                   )
                 ],
               ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.258,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffeeeeee)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: Text(
-                      "Assistant",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color(0xff393E46),
-                      ),
+              GestureDetector(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.258,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xffeeeeee)),
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(9.0),
+                      child: Text(
+                        "Assistant",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14,
+                          color: Color(0xff393E46),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => CuristAssistant()));
+                },
               ),
               Column(
                 children: <Widget>[

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:healthapp/main.dart' as main;
 
 class Facts extends StatelessWidget {
   Facts({this.text, this.name, this.type});
@@ -13,8 +15,8 @@ class Facts extends StatelessWidget {
         margin: const EdgeInsets.only(right: 10.0),
         child: CircleAvatar(
           backgroundImage: AssetImage('assets/images/curist.png'),
-          backgroundColor: Colors.grey[200],
-          radius: 12,
+          backgroundColor: Colors.white,
+          radius: 11,
         ),
       ),
       Expanded(
@@ -24,14 +26,18 @@ class Facts extends StatelessWidget {
 //            Text(this.name,
 //                style: TextStyle(fontWeight: FontWeight.bold)),
             Card(
-                color: Color(0xFF76EAD7).withOpacity(0.2),
+                color: Colors.white.withOpacity(0.6),
                 elevation: 0,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
                   child: Text(
                     text,
+                    style: GoogleFonts.montserrat(
+                      color: Color(0xFF393E46),
+                    ),
                   ),
                 )),
           ],
@@ -48,7 +54,7 @@ class Facts extends StatelessWidget {
           children: <Widget>[
             // Text(this.name, style: Theme.of(context).textTheme.subhead),
             Card(
-                color: Color(0xFF76EAD7),
+                color: Colors.white,
                 elevation: 0,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -57,7 +63,7 @@ class Facts extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
                   child: Text(
                     text,
-                    style: TextStyle(color: Color(0xFF393E46)),
+                    style: GoogleFonts.montserrat(color: Color(0xFF393E46)),
                   ),
                 )),
           ],
@@ -66,9 +72,14 @@ class Facts extends StatelessWidget {
       Container(
         margin: const EdgeInsets.only(left: 10.0),
         child: CircleAvatar(
-          child: new Text(this.name[0]),
-          backgroundColor: Colors.grey[200],
-          radius: 12,
+          child: new Text(
+            main.prefs.get('username')[0],
+            style: GoogleFonts.montserrat(
+              color: Color(0xFF76EAD7),
+            ),
+          ),
+          backgroundColor: Colors.white,
+          radius: 11,
         ),
       ),
     ];
