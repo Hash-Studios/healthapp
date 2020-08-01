@@ -78,6 +78,9 @@ class Home extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.258,
                       height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/medicines.jpg")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -105,6 +108,9 @@ class Home extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.258,
                       height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/assistant.jpg")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -134,6 +140,9 @@ class Home extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.258,
                       height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/exercise.jpg")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -168,6 +177,9 @@ class Home extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.258,
                       height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/activity.jpg")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -195,6 +207,9 @@ class Home extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.258,
                       height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/contact.jpg")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -211,7 +226,7 @@ class Home extends StatelessWidget {
                   ],
                 ),
                 onTap: () {
-                  launch("102");
+                  launch("tel:102");
                 },
               ),
               GestureDetector(
@@ -221,6 +236,9 @@ class Home extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.258,
                       height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/covid.jpg")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
