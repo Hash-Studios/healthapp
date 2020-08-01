@@ -17,7 +17,7 @@ void main() {
       prefs = await Hive.openBox('prefs');
       prefs.put('username', 'Abhay Maurya');
       prefs.put('userImage',
-          'https://images.unsplash.com/photo-1593229874334-90d965f27c42?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=min-hius-r-ii4jKDL6Y-unsplash.jpg&w=1920');
+          'https://images.unsplash.com/photo-1596124579928-4bf06a8adfef?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=miguel-angel-hernandez-GHrMwqiEdf4-unsplash.jpg&w=640');
       prefs.put('age', '20');
       prefs.put('weight', '85');
       prefs.put('height', '181');

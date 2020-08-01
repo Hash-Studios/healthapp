@@ -48,8 +48,11 @@ class Exercise extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
+          Spacer(
+            flex: 2,
+          ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Container(
               padding: EdgeInsets.all(16),
               width: MediaQuery.of(context).size.width * 0.9,
@@ -110,41 +113,76 @@ class Exercise extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Spacer(
-                  flex: 1,
+                // Spacer(
+                //   flex: 1,
+                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(23, 0, 8, 0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.43,
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/yoga.jpg")),
+                        color: Color(0xFFEEEEEE),
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.42,
-                  height: MediaQuery.of(context).size.height * 0.2,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage("assets/images/yoga.jpg")),
-                      color: Color(0xFFEEEEEE),
-                      borderRadius: BorderRadius.circular(10)),
+                // Spacer(
+                //   flex: 2,
+                // ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.43,
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/meditation.jpg")),
+                        color: Color(0xFFEEEEEE),
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
                 ),
-                Spacer(
-                  flex: 2,
+                // Spacer(
+                //   flex: 1,
+                // ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.43,
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/yoga.jpg")),
+                        color: Color(0xFFEEEEEE),
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.42,
-                  height: MediaQuery.of(context).size.height * 0.2,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage("assets/images/meditation.jpg")),
-                      color: Color(0xFFEEEEEE),
-                      borderRadius: BorderRadius.circular(10)),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.43,
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/meditation.jpg")),
+                        color: Color(0xFFEEEEEE),
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
                 ),
-                Spacer(
-                  flex: 1,
-                ),
+                // Spacer(
+                //   flex: 1,
+                // ),
               ],
             ),
           ),
@@ -232,6 +270,9 @@ class Exercise extends StatelessWidget {
                 onTap: () {},
               ),
             ],
+          ),
+          Spacer(
+            flex: 1,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
