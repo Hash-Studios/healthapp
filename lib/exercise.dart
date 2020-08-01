@@ -4,8 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:healthapp/profile.dart';
 import 'package:healthapp/main.dart' as main;
 
-import 'dialog_flow.dart';
-
 class Exercise extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

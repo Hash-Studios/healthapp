@@ -7,6 +7,7 @@ import 'package:healthapp/exercise.dart';
 import 'package:healthapp/main.dart' as main;
 import 'package:healthapp/medicines.dart';
 import 'package:healthapp/profile.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -187,47 +188,58 @@ class Home extends StatelessWidget {
                       CupertinoPageRoute(builder: (context) => Activity()));
                 },
               ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.258,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffeeeeee)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: Text(
-                      "Contact",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color(0xff393E46),
-                      ),
+              GestureDetector(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.258,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xffeeeeee)),
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(9.0),
+                      child: Text(
+                        "Contact",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14,
+                          color: Color(0xff393E46),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                onTap: () {
+                  launch("102");
+                },
               ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.258,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffeeeeee)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: Text(
-                      "COVID-19",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color(0xff393E46),
-                      ),
+              GestureDetector(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.258,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xffeeeeee)),
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(9.0),
+                      child: Text(
+                        "COVID-19",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14,
+                          color: Color(0xff393E46),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                onTap: () {
+                  launch(
+                      "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports");
+                },
               ),
             ],
           ),
@@ -258,8 +270,7 @@ class ActivityRings extends StatelessWidget {
             child: CircularProgressIndicator(
               strokeWidth: 16,
               value: 0.8,
-              valueColor:
-                  AlwaysStoppedAnimation<Color>(Color(0xFFC4FB6D)),
+              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFC4FB6D)),
             ),
           ),
         ),
@@ -271,8 +282,7 @@ class ActivityRings extends StatelessWidget {
             child: CircularProgressIndicator(
               strokeWidth: 16,
               value: 0.5,
-              valueColor:
-                  AlwaysStoppedAnimation<Color>(Color(0xFFEDFFD1)),
+              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFEDFFD1)),
             ),
           ),
         ),
@@ -285,12 +295,10 @@ class ActivityRings extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 2, horizontal: 6),
+                    padding: EdgeInsets.symmetric(vertical: 2, horizontal: 6),
                     decoration: BoxDecoration(
                         color: Color(0xFFC4FB6D),
-                        borderRadius:
-                            BorderRadius.all(Radius.circular(500))),
+                        borderRadius: BorderRadius.all(Radius.circular(500))),
                     child: Text(
                       "STEPS",
                       style: GoogleFonts.montserrat(
@@ -310,12 +318,10 @@ class ActivityRings extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 2, horizontal: 6),
+                    padding: EdgeInsets.symmetric(vertical: 2, horizontal: 6),
                     decoration: BoxDecoration(
                         color: Color(0xFFEDFFD1),
-                        borderRadius:
-                            BorderRadius.all(Radius.circular(500))),
+                        borderRadius: BorderRadius.all(Radius.circular(500))),
                     child: Text(
                       "CALORIES",
                       style: GoogleFonts.montserrat(
