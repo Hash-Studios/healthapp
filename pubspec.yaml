@@ -45,7 +45,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/health-assistant-a5445-8d571f0f6b24.json
-  #   - images/a_dot_ham.jpeg
+    - assets/images/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
