@@ -44,12 +44,15 @@ class Home extends StatelessWidget {
               ),
             ],
           ),
+          Spacer(
+            flex: 1,
+          ),
           Stack(
             alignment: Alignment.center,
             children: <Widget>[
               Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.width * 0.8,
+                width: MediaQuery.of(context).size.width * 0.7,
+                height: MediaQuery.of(context).size.width * 0.7,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CircularProgressIndicator(
@@ -61,8 +64,8 @@ class Home extends StatelessWidget {
                 ),
               ),
               Container(
-                width: MediaQuery.of(context).size.width * 0.7,
-                height: MediaQuery.of(context).size.width * 0.7,
+                width: MediaQuery.of(context).size.width * 0.6,
+                height: MediaQuery.of(context).size.width * 0.6,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CircularProgressIndicator(
@@ -135,6 +138,151 @@ class Home extends StatelessWidget {
                     )),
               ),
             ],
+          ),
+          Spacer(
+            flex: 2,
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.258,
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xffeeeeee)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(9.0),
+                    child: Text(
+                      "Medicines",
+                      style: GoogleFonts.montserrat(
+                        fontSize: 14,
+                        color: Color(0xff393E46),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.258,
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xffeeeeee)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(9.0),
+                    child: Text(
+                      "Assistant",
+                      style: GoogleFonts.montserrat(
+                        fontSize: 14,
+                        color: Color(0xff393E46),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.258,
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xffeeeeee)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(9.0),
+                    child: Text(
+                      "Exercises",
+                      style: GoogleFonts.montserrat(
+                        fontSize: 14,
+                        color: Color(0xff393E46),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+          Spacer(),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.258,
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xffeeeeee)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(9.0),
+                    child: Text(
+                      "Activity",
+                      style: GoogleFonts.montserrat(
+                        fontSize: 14,
+                        color: Color(0xff393E46),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.258,
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xffeeeeee)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(9.0),
+                    child: Text(
+                      "Contact",
+                      style: GoogleFonts.montserrat(
+                        fontSize: 14,
+                        color: Color(0xff393E46),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.258,
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xffeeeeee)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(9.0),
+                    child: Text(
+                      "COVID-19",
+                      style: GoogleFonts.montserrat(
+                        fontSize: 14,
+                        color: Color(0xff393E46),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+          Spacer(
+            flex: 2,
           ),
         ],
       ),
