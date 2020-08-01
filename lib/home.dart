@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
                 child: Text(
-                  "Sat, 1 Aug",
+                  "Sun, 2 Aug",
                   style: GoogleFonts.montserrat(
                       color: Colors.white,
                       fontSize: 34,

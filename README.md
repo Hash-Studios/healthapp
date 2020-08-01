@@ -1,20 +1,22 @@
-# Curist - An AI Healthcare App
+# <img src="assets/images/curist.png" width ="40"> Curist - An AI Healthcare App
 
 **HACK THE HOURGLASS**
 **IDEA SUBMISSION**
 
-![](assets/images/curist.png)
+## Screenshots
 
-## Demo
-
-| ![](demo/8.jpg) | ![](demo/7.jpg) | ![](demo/1.jpg) |
+| ![](demo/9.jpg) | ![](demo/14.jpg) | ![](demo/1.jpg) |
 | :-------------: | :-------------:  | :-------------:  |
 |     Home     |    Main Drawer    |    Assistant    |
 
 
-| ![](demo/3.jpg) | ![](demo/4.jpg) | ![](demo/5.jpg) |
+| ![](demo/12.jpg) | ![](demo/4.jpg) | ![](demo/5.jpg) |
 | :-------------:  | :-------------:  | :-------------:  |
 |     Exercises       |     Medicines     |     Activity     |
+
+| ![](demo/11.jpg) | ![](demo/13.jpg) |
+| :-------------:  | :-------------:  |
+|     Add Medicines      |     Update Details     |
 
 Application link [here](demo/app-arm64-v8a-release.apk)
 ## Track - Healthcare
@@ -91,3 +93,6 @@ GitHub Repository Link
 
 Video Link
 [https://youtu.be/e64s2QoEd9w](https://youtu.be/e64s2QoEd9w)
+
+Application Link
+[demo/app-arm64-v8a-release.apk](demo/app-arm64-v8a-release.apk)
