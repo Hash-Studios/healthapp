@@ -3,6 +3,8 @@
 **HACK THE HOURGLASS**
 **IDEA SUBMISSION**
 
+![](demo/curistmockup.png)
+
 ## Screenshots
 
 | ![](demo/9.jpg) | ![](demo/14.jpg) | ![](demo/1.jpg) |
