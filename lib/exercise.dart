@@ -123,6 +123,9 @@ class Exercise extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.42,
                   height: MediaQuery.of(context).size.height * 0.2,
                   decoration: BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/yoga.jpg")),
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.circular(10)),
                 ),
@@ -133,6 +136,9 @@ class Exercise extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.42,
                   height: MediaQuery.of(context).size.height * 0.2,
                   decoration: BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/meditation.jpg")),
                       color: Color(0xFFEEEEEE),
                       borderRadius: BorderRadius.circular(10)),
                 ),
@@ -153,6 +159,9 @@ class Exercise extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.258,
                     height: MediaQuery.of(context).size.height * 0.1,
                     decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/arms.jpg")),
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffeeeeee)),
                   ),
@@ -175,6 +184,9 @@ class Exercise extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.258,
                       height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/legs.jpg")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -199,6 +211,9 @@ class Exercise extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.258,
                       height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/abs.jpg")),
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffeeeeee)),
                     ),
@@ -228,6 +243,9 @@ class Exercise extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.258,
                     height: MediaQuery.of(context).size.height * 0.1,
                     decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/chest.jpg")),
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffeeeeee)),
                   ),
@@ -249,6 +267,9 @@ class Exercise extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.258,
                     height: MediaQuery.of(context).size.height * 0.1,
                     decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/back.jpg")),
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffeeeeee)),
                   ),
@@ -270,6 +291,9 @@ class Exercise extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.258,
                     height: MediaQuery.of(context).size.height * 0.1,
                     decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/shoulders.jpg")),
                         borderRadius: BorderRadius.circular(10),
                         color: Color(0xffeeeeee)),
                   ),
