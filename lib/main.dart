@@ -15,7 +15,7 @@ void main() {
       Hive.init(dir.path);
       prefs = await Hive.openBox('prefs');
       prefs.put('username', 'Abhay Maurya');
-      prefs.put('userimage',
+      prefs.put('userImage',
           'https://images.unsplash.com/photo-1593229874334-90d965f27c42?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=min-hius-r-ii4jKDL6Y-unsplash.jpg&w=1920');
       prefs.put('age', '20');
       prefs.put('weight', '85');

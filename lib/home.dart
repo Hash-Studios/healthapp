@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthapp/main.dart' as main;
 
 class Home extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class Home extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(8),
             child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/curist.png'),
+              backgroundImage: NetworkImage(main.prefs.get('userImage')),
               backgroundColor: Colors.grey[200],
               // radius: 12,
             ),
