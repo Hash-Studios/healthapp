@@ -97,6 +97,12 @@ class _CuristAssistantState extends State<CuristAssistant> {
         ),
         backgroundColor: Color(0xff76EAD7),
         elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.chevron_left),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Column(children: <Widget>[
         Flexible(

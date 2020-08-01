@@ -23,12 +23,15 @@ class Home extends StatelessWidget {
               Navigator.push(
                   context, CupertinoPageRoute(builder: (context) => Profile()));
             },
-            child: Container(
-              padding: EdgeInsets.all(8),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(main.prefs.get('userImage')),
-                backgroundColor: Colors.grey[200],
-                // radius: 12,
+            child: Hero(
+              tag: "User",
+              child: Container(
+                padding: EdgeInsets.all(8),
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(main.prefs.get('userImage')),
+                  backgroundColor: Colors.grey[200],
+                  // radius: 12,
+                ),
               ),
             ),
           ),

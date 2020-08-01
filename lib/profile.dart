@@ -74,7 +74,7 @@ class ListButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      padding: const EdgeInsets.symmetric(vertical: 2.0),
       child: Container(
         color: Color(0xFFEEEEEE),
         child: ListTile(
@@ -107,12 +107,15 @@ class TopSection extends StatelessWidget {
         Spacer(
           flex: 2,
         ),
-        Container(
-          padding: EdgeInsets.all(8),
-          child: CircleAvatar(
-            backgroundImage: NetworkImage(main.prefs.get('userImage')),
-            backgroundColor: Colors.grey[200],
-            radius: 50,
+        Hero(
+          tag: "User",
+          child: Container(
+            padding: EdgeInsets.all(8),
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(main.prefs.get('userImage')),
+              backgroundColor: Colors.grey[200],
+              radius: 50,
+            ),
           ),
         ),
         Spacer(
