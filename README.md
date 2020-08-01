@@ -47,10 +47,22 @@ For creating the user interaction for assistant/chatbot, we needed to know how a
 It was also our first project using Dialogflow so we had to learn how to actually set it up working with Flutter.
 
 ## Plan for next 12 hours:
-Finish the medicines’ part of the app with notifications and reminders. Actually, store user data i.e. medicines and user’s personal data like weight, height, etc.
-We have to also implement the settings and the exercises page of the app.
+**Update**
+
+These things are completed -
+
+~~Working pedometer and calories detection.~~
+
+~~Actually, store user data i.e. medicines and user’s personal data like weight, height, etc.~~
+
+~~We have to also implement the settings and the exercises page of the app.~~
+
+~~We have to also test the app for visual bugs and glitches.~~
+
 We have to also implement the wger REST API for the exercises so that we can fetch new and updated exercises along with their caloric information
-We have to also test the app for visual bugs and glitches.
+
+Finish the medicines’ part of the app with notifications and reminders.
+
 
 ## Application of the solution
 The app can be used to help people by reminding them to take their medicines on time. It can also help them by managing their exercise schedule. It can also help them by evaluating self-assessment tests. Curist has an in-built assistant which can also help people by advising them precautions and tips so they can stay healthy. Curist Assistant can engage in small talk and can recommend diet, exercises, yoga asanas, etc. Curist also tracks a user’s activity and can alert them when they are not very active.
