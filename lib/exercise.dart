@@ -125,15 +125,21 @@ class Exercise extends StatelessWidget {
                 // ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(23, 0, 8, 0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.43,
-                    height: MediaQuery.of(context).size.height * 0.2,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/yoga.jpg")),
-                        color: Color(0xFFEEEEEE),
-                        borderRadius: BorderRadius.circular(10)),
+                  child: GestureDetector(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.43,
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/yoga.jpg")),
+                          color: Color(0xFFEEEEEE),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    onTap: () {
+                      launch(
+                          "https://www.nytimes.com/guides/well/beginner-yoga");
+                    },
                   ),
                 ),
                 // Spacer(
@@ -141,15 +147,21 @@ class Exercise extends StatelessWidget {
                 // ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.43,
-                    height: MediaQuery.of(context).size.height * 0.2,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/meditation.jpg")),
-                        color: Color(0xFFEEEEEE),
-                        borderRadius: BorderRadius.circular(10)),
+                  child: GestureDetector(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.43,
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image:
+                                  AssetImage("assets/images/meditation.jpg")),
+                          color: Color(0xFFEEEEEE),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    onTap: () {
+                      launch("https://www.mindful.org/how-to-meditate/");
+                    },
                   ),
                 ),
                 // Spacer(
@@ -157,28 +169,40 @@ class Exercise extends StatelessWidget {
                 // ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.43,
-                    height: MediaQuery.of(context).size.height * 0.2,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/yoga.jpg")),
-                        color: Color(0xFFEEEEEE),
-                        borderRadius: BorderRadius.circular(10)),
+                  child: GestureDetector(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.43,
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/yoga.jpg")),
+                          color: Color(0xFFEEEEEE),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    onTap: () {
+                      launch(
+                          "https://www.nytimes.com/guides/well/beginner-yoga");
+                    },
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.43,
-                    height: MediaQuery.of(context).size.height * 0.2,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/meditation.jpg")),
-                        color: Color(0xFFEEEEEE),
-                        borderRadius: BorderRadius.circular(10)),
+                  child: GestureDetector(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.43,
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image:
+                                  AssetImage("assets/images/meditation.jpg")),
+                          color: Color(0xFFEEEEEE),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    onTap: () {
+                      launch("https://www.mindful.org/how-to-meditate/");
+                    },
                   ),
                 ),
                 // Spacer(
