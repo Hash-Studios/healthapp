@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthapp/activity.dart';
 import 'package:healthapp/dialog_flow.dart';
 import 'package:healthapp/exercise.dart';
 import 'package:healthapp/main.dart' as main;
 import 'package:healthapp/medicines.dart';
+import 'package:healthapp/profile.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Menu extends StatelessWidget {
   final Animation<Offset> slideAnimation;
@@ -104,6 +107,10 @@ class Menu extends StatelessWidget {
                       ),
                       onTap: () {
                         onMenuTap();
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => Profile()));
                       },
                     ),
                     Spacer(
@@ -225,6 +232,10 @@ class Menu extends StatelessWidget {
                       ),
                       onTap: () {
                         onMenuTap();
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => Activity()));
                       },
                     ),
                     Spacer(flex: 2),
@@ -252,6 +263,8 @@ class Menu extends StatelessWidget {
                       ),
                       onTap: () {
                         onMenuTap();
+                        launch(
+                            "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports");
                       },
                     ),
                     Spacer(flex: 2),
@@ -287,6 +300,10 @@ class Menu extends StatelessWidget {
                       ),
                       onTap: () {
                         onMenuTap();
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => Profile()));
                       },
                     ),
                     Spacer(flex: 2),
@@ -314,6 +331,7 @@ class Menu extends StatelessWidget {
                       ),
                       onTap: () {
                         onMenuTap();
+                        launch("tel:102");
                       },
                     ),
                     Spacer(flex: 5),
