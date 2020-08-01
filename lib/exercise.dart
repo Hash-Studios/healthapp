@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthapp/profile.dart';
 import 'package:healthapp/main.dart' as main;
+import 'package:url_launcher/url_launcher.dart';
 
 class Exercise extends StatelessWidget {
   @override
@@ -191,30 +192,34 @@ class Exercise extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.258,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/arms.png")),
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffeeeeee)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: Text(
-                      "Arms",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color(0xff393E46),
+              GestureDetector(
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.258,
+                        height: MediaQuery.of(context).size.height * 0.1,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage("assets/images/arms.png")),
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xffeeeeee)),
                       ),
-                    ),
-                  )
-                ],
-              ),
+                      Padding(
+                        padding: const EdgeInsets.all(9.0),
+                        child: Text(
+                          "Arms",
+                          style: GoogleFonts.montserrat(
+                            fontSize: 14,
+                            color: Color(0xff393E46),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  onTap: () {
+                    launch("https://www.coachmag.co.uk/fitness/arms-workouts");
+                  }),
               GestureDetector(
                 child: Column(
                   children: <Widget>[
@@ -240,7 +245,9 @@ class Exercise extends StatelessWidget {
                     )
                   ],
                 ),
-                onTap: () {},
+                onTap: () {
+                  launch("https://www.coachmag.co.uk/workouts/leg-workouts");
+                },
               ),
               GestureDetector(
                 child: Column(
@@ -267,7 +274,9 @@ class Exercise extends StatelessWidget {
                     )
                   ],
                 ),
-                onTap: () {},
+                onTap: () {
+                  launch("https://www.coachmag.co.uk/workouts/abs-workouts");
+                },
               ),
             ],
           ),
@@ -278,77 +287,94 @@ class Exercise extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.258,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/chest.png")),
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffeeeeee)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: Text(
-                      "Chest",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color(0xff393E46),
-                      ),
+              GestureDetector(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.258,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/chest.png")),
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xffeeeeee)),
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(9.0),
+                      child: Text(
+                        "Chest",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14,
+                          color: Color(0xff393E46),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                onTap: () {
+                  launch("https://www.coachmag.co.uk/workouts/chest-workouts");
+                },
               ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.258,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/back.png")),
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffeeeeee)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: Text(
-                      "Back",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color(0xff393E46),
-                      ),
+              GestureDetector(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.258,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/back.png")),
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xffeeeeee)),
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(9.0),
+                      child: Text(
+                        "Back",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14,
+                          color: Color(0xff393E46),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                onTap: () {
+                  launch(
+                      "https://www.coachmag.co.uk/fitness/workouts/back-workouts");
+                },
               ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.258,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/shoulders.png")),
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffeeeeee)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: Text(
-                      "Shoulders",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        color: Color(0xff393E46),
-                      ),
+              GestureDetector(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.258,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/shoulders.png")),
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xffeeeeee)),
                     ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(9.0),
+                      child: Text(
+                        "Shoulders",
+                        style: GoogleFonts.montserrat(
+                          fontSize: 14,
+                          color: Color(0xff393E46),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                onTap: () {
+                  launch(
+                      "https://www.coachmag.co.uk/fitness/workouts/shoulder-workouts");
+                },
               ),
             ],
           ),
