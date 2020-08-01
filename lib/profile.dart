@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthapp/main.dart' as main;
+import 'package:healthapp/update_details.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -32,7 +33,10 @@ class Profile extends StatelessWidget {
           Spacer(flex: 1),
           ListButton(
             text: "Personal Details",
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  CupertinoPageRoute(builder: (context) => UpdateDetails()));
+            },
           ),
           ListButton(
             text: "Notifications",
