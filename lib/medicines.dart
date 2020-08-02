@@ -16,12 +16,33 @@ class Medicines extends StatefulWidget {
 }
 
 class _MedicinesState extends State<Medicines> {
+  String timeM;
+  String timeE;
+  String timeN;
   @override
   void initState() {
     medicines = Hive.box('medicines');
     morning = medicines.get('morning') ?? Map<String, String>();
     evening = medicines.get('evening') ?? Map<String, String>();
     night = medicines.get('night') ?? Map<String, String>();
+    timeM = medicines.get('timeM') ??
+        TimeOfDay.now()
+            .toString()
+            .replaceAll('TimeOfDay', "")
+            .replaceAll('(', "")
+            .replaceAll(')', "");
+    timeE = medicines.get('timeE') ??
+        TimeOfDay.now()
+            .toString()
+            .replaceAll('TimeOfDay', "")
+            .replaceAll('(', "")
+            .replaceAll(')', "");
+    timeN = medicines.get('timeN') ??
+        TimeOfDay.now()
+            .toString()
+            .replaceAll('TimeOfDay', "")
+            .replaceAll('(', "")
+            .replaceAll(')', "");
     super.initState();
   }
 
@@ -105,10 +126,35 @@ class _MedicinesState extends State<Medicines> {
                                 style: GoogleFonts.montserrat(
                                     fontWeight: FontWeight.w600, fontSize: 24),
                               ),
-                              Text(
-                                "7:30 am",
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w300, fontSize: 14),
+                              GestureDetector(
+                                child: Text(
+                                  timeM.toString(),
+                                  style: GoogleFonts.montserrat(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14),
+                                ),
+                                onTap: () async {
+                                  TimeOfDay picked = await showTimePicker(
+                                    context: context,
+                                    initialTime: TimeOfDay.now(),
+                                    builder:
+                                        (BuildContext context, Widget child) {
+                                      return MediaQuery(
+                                        data: MediaQuery.of(context).copyWith(
+                                            alwaysUse24HourFormat: true),
+                                        child: child,
+                                      );
+                                    },
+                                  );
+                                  setState(() {
+                                    timeM = picked
+                                        .toString()
+                                        .replaceAll('TimeOfDay', "")
+                                        .replaceAll('(', "")
+                                        .replaceAll(')', "");
+                                    medicines.put('timeM', timeM);
+                                  });
+                                },
                               ),
                             ],
                           ),
@@ -182,10 +228,35 @@ class _MedicinesState extends State<Medicines> {
                                 style: GoogleFonts.montserrat(
                                     fontWeight: FontWeight.w600, fontSize: 24),
                               ),
-                              Text(
-                                "7:30 am",
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w300, fontSize: 14),
+                              GestureDetector(
+                                child: Text(
+                                  timeM.toString(),
+                                  style: GoogleFonts.montserrat(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14),
+                                ),
+                                onTap: () async {
+                                  TimeOfDay picked = await showTimePicker(
+                                    context: context,
+                                    initialTime: TimeOfDay.now(),
+                                    builder:
+                                        (BuildContext context, Widget child) {
+                                      return MediaQuery(
+                                        data: MediaQuery.of(context).copyWith(
+                                            alwaysUse24HourFormat: true),
+                                        child: child,
+                                      );
+                                    },
+                                  );
+                                  setState(() {
+                                    timeM = picked
+                                        .toString()
+                                        .replaceAll('TimeOfDay', "")
+                                        .replaceAll('(', "")
+                                        .replaceAll(')', "");
+                                    medicines.put('timeM', timeM);
+                                  });
+                                },
                               ),
                             ],
                           ),
@@ -216,10 +287,35 @@ class _MedicinesState extends State<Medicines> {
                                 style: GoogleFonts.montserrat(
                                     fontWeight: FontWeight.w600, fontSize: 24),
                               ),
-                              Text(
-                                "5:30 pm",
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w300, fontSize: 14),
+                              GestureDetector(
+                                child: Text(
+                                  timeE.toString(),
+                                  style: GoogleFonts.montserrat(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14),
+                                ),
+                                onTap: () async {
+                                  TimeOfDay picked = await showTimePicker(
+                                    context: context,
+                                    initialTime: TimeOfDay.now(),
+                                    builder:
+                                        (BuildContext context, Widget child) {
+                                      return MediaQuery(
+                                        data: MediaQuery.of(context).copyWith(
+                                            alwaysUse24HourFormat: true),
+                                        child: child,
+                                      );
+                                    },
+                                  );
+                                  setState(() {
+                                    timeE = picked
+                                        .toString()
+                                        .replaceAll('TimeOfDay', "")
+                                        .replaceAll('(', "")
+                                        .replaceAll(')', "");
+                                    medicines.put('timeE', timeE);
+                                  });
+                                },
                               ),
                             ],
                           ),
@@ -266,10 +362,35 @@ class _MedicinesState extends State<Medicines> {
                                 style: GoogleFonts.montserrat(
                                     fontWeight: FontWeight.w600, fontSize: 24),
                               ),
-                              Text(
-                                "5:30 pm",
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w300, fontSize: 14),
+                              GestureDetector(
+                                child: Text(
+                                  timeE.toString(),
+                                  style: GoogleFonts.montserrat(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14),
+                                ),
+                                onTap: () async {
+                                  TimeOfDay picked = await showTimePicker(
+                                    context: context,
+                                    initialTime: TimeOfDay.now(),
+                                    builder:
+                                        (BuildContext context, Widget child) {
+                                      return MediaQuery(
+                                        data: MediaQuery.of(context).copyWith(
+                                            alwaysUse24HourFormat: true),
+                                        child: child,
+                                      );
+                                    },
+                                  );
+                                  setState(() {
+                                    timeE = picked
+                                        .toString()
+                                        .replaceAll('TimeOfDay', "")
+                                        .replaceAll('(', "")
+                                        .replaceAll(')', "");
+                                    medicines.put('timeE', timeE);
+                                  });
+                                },
                               ),
                             ],
                           ),
@@ -300,10 +421,35 @@ class _MedicinesState extends State<Medicines> {
                                 style: GoogleFonts.montserrat(
                                     fontWeight: FontWeight.w600, fontSize: 24),
                               ),
-                              Text(
-                                "9:00 pm",
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w300, fontSize: 14),
+                              GestureDetector(
+                                child: Text(
+                                  timeN.toString(),
+                                  style: GoogleFonts.montserrat(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14),
+                                ),
+                                onTap: () async {
+                                  TimeOfDay picked = await showTimePicker(
+                                    context: context,
+                                    initialTime: TimeOfDay.now(),
+                                    builder:
+                                        (BuildContext context, Widget child) {
+                                      return MediaQuery(
+                                        data: MediaQuery.of(context).copyWith(
+                                            alwaysUse24HourFormat: true),
+                                        child: child,
+                                      );
+                                    },
+                                  );
+                                  setState(() {
+                                    timeN = picked
+                                        .toString()
+                                        .replaceAll('TimeOfDay', "")
+                                        .replaceAll('(', "")
+                                        .replaceAll(')', "");
+                                    medicines.put('timeN', timeN);
+                                  });
+                                },
                               ),
                             ],
                           ),
@@ -350,10 +496,35 @@ class _MedicinesState extends State<Medicines> {
                                 style: GoogleFonts.montserrat(
                                     fontWeight: FontWeight.w600, fontSize: 24),
                               ),
-                              Text(
-                                "9:00 pm",
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w300, fontSize: 14),
+                              GestureDetector(
+                                child: Text(
+                                  timeN.toString(),
+                                  style: GoogleFonts.montserrat(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14),
+                                ),
+                                onTap: () async {
+                                  TimeOfDay picked = await showTimePicker(
+                                    context: context,
+                                    initialTime: TimeOfDay.now(),
+                                    builder:
+                                        (BuildContext context, Widget child) {
+                                      return MediaQuery(
+                                        data: MediaQuery.of(context).copyWith(
+                                            alwaysUse24HourFormat: true),
+                                        child: child,
+                                      );
+                                    },
+                                  );
+                                  setState(() {
+                                    timeN = picked
+                                        .toString()
+                                        .replaceAll('TimeOfDay', "")
+                                        .replaceAll('(', "")
+                                        .replaceAll(')', "");
+                                    medicines.put('timeN', timeN);
+                                  });
+                                },
                               ),
                             ],
                           ),
