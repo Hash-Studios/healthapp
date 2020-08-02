@@ -20,7 +20,7 @@
 | :-------------:  | :-------------:  |
 |     Add Medicines      |     Update Details     |
 
-Application link [here](demo/app-arm64-v8a-release.apk)
+Application link [here](https://github.com/Hash-Studios/healthapp/releases/download/v0.5/app-arm64-v8a-release.apk)
 ## Track - Healthcare
 
 ## Problem Description
