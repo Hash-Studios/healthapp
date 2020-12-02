@@ -102,3 +102,7 @@ Video Link
 
 Application Link
 [demo/app-arm64-v8a-release.apk](https://github.com/Hash-Studios/healthapp/releases/download/v0.5/app-arm64-v8a-release.apk)
+
+## License
+
+Curist is released under BSD 3-Clause License. [See License](https://github.com/Hash-Studios/healthapp/blob/master/LICENSE) for details.
