@@ -24,12 +24,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_dialogflow: ^0.1.3
+  google_fonts: ^1.1.0
   hive: ^1.4.1+1
   hive_flutter: ^0.3.0+1
   path_provider: ^1.6.11
-  google_fonts: ^1.1.0
-  url_launcher: ^5.5.0
   pedometer: ^1.2.5
+  url_launcher: ^5.5.0
 
 dev_dependencies:
   flutter_test:
@@ -38,7 +38,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
   # The following line ensures that the Material Icons font is
@@ -50,7 +49,6 @@ flutter:
   assets:
     - assets/health-assistant-a5445-8d571f0f6b24.json
     - assets/images/
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
