@@ -20,7 +20,7 @@
 | :-------------:  | :-------------:  |
 |     Add Medicines      |     Update Details     |
 
-Application link [here](demo/app-arm64-v8a-release.apk)
+Application link [here](https://github.com/Hash-Studios/healthapp/releases/download/v0.5/app-arm64-v8a-release.apk)
 ## Track - Healthcare
 
 ## Problem Description
@@ -44,14 +44,18 @@ We have trained DialogFlow for multiple health-related conversations.
 We have also added Local User Data Storage.
 We have also added complex animations.
 We have added support and contact helplines.
+We have added medicines database and notification.
+We have added new illustrations.
 
 ## Challenges we ran into
 Complex yet engaging UI was needed, to lift the mood of the user so that they feel good after using the app. So it was a challenge to actually create this UI with excellent user experience.
 For creating the user interaction for assistant/chatbot, we needed to know how a person having some disease will behave for that we researched a lot, to actually give the initial response to the bot which were then used for the model training.
 It was also our first project using Dialogflow so we had to learn how to actually set it up working with Flutter.
+We also had problems setting up pedometer with Flutter. As only single package of pedometer is available on pub.dev, which is not compatible with AndroidX, we had to skip pedometer in release build, but it is working in debug build.
 
 ## Plan for next 12 hours:
 **Update**
+What we had planned initially, we have completed it.
 
 These things are completed -
 
@@ -63,9 +67,9 @@ These things are completed -
 
 ~~We have to also test the app for visual bugs and glitches.~~
 
-We have to also implement the wger REST API for the exercises so that we can fetch new and updated exercises along with their caloric information
+~~We have to also implement the wger REST API for the exercises so that we can fetch new and updated exercises along with their caloric information
 
-Finish the medicines’ part of the app with notifications and reminders.
+~~Finish the medicines’ part of the app with notifications and reminders.
 
 
 ## Application of the solution
@@ -97,4 +101,8 @@ Video Link
 [https://youtu.be/e64s2QoEd9w](https://youtu.be/e64s2QoEd9w)
 
 Application Link
-[demo/app-arm64-v8a-release.apk](demo/app-arm64-v8a-release.apk)
+[demo/app-arm64-v8a-release.apk](https://github.com/Hash-Studios/healthapp/releases/download/v0.5/app-arm64-v8a-release.apk)
+
+## License
+
+Curist is released under BSD 3-Clause License. [See License](https://github.com/Hash-Studios/healthapp/blob/master/LICENSE) for details.
