@@ -282,7 +282,7 @@ class _HomeState extends State<Home> {
 
 class ActivityRings extends StatefulWidget {
   const ActivityRings({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -290,7 +290,7 @@ class ActivityRings extends StatefulWidget {
 }
 
 class _ActivityRingsState extends State<ActivityRings> {
-  StreamSubscription<StepCount> _subscription;
+  late StreamSubscription<StepCount> _subscription;
   int stepsToday = int.parse(main.prefs.get("stepsToday"));
   @override
   void initState() {

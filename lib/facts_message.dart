@@ -5,9 +5,9 @@ import 'package:healthapp/main.dart' as main;
 class Facts extends StatelessWidget {
   Facts({this.text, this.name, this.type});
 
-  final String text;
-  final String name;
-  final bool type;
+  final String? text;
+  final String? name;
+  final bool? type;
 
   List<Widget> botMessage(context) {
     return <Widget>[
@@ -34,7 +34,7 @@ class Facts extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
                   child: Text(
-                    text,
+                    text!,
                     style: GoogleFonts.montserrat(
                       color: Color(0xFF393E46),
                     ),
@@ -62,7 +62,7 @@ class Facts extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8.0),
                   child: Text(
-                    text,
+                    text!,
                     style: GoogleFonts.montserrat(color: Color(0xFF393E46)),
                   ),
                 )),
@@ -91,7 +91,7 @@ class Facts extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10.0),
       child: new Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: this.type ? userMessage(context) : botMessage(context),
+        children: this.type! ? userMessage(context) : botMessage(context),
       ),
     );
   }

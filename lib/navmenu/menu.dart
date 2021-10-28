@@ -9,19 +9,19 @@ import 'package:healthapp/profile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Menu extends StatelessWidget {
-  final Animation<Offset> slideAnimation;
-  final Animation<double> menuAnimation;
-  final int selectedIndex;
+  final Animation<Offset>? slideAnimation;
+  final Animation<double>? menuAnimation;
+  final int? selectedIndex;
   final Function onMenuItemClicked;
   final onMenuTap;
 
   const Menu(
-      {Key key,
-      @required this.onMenuTap,
+      {Key? key,
+      required this.onMenuTap,
       this.slideAnimation,
       this.menuAnimation,
       this.selectedIndex,
-      @required this.onMenuItemClicked})
+      required this.onMenuItemClicked})
       : super(key: key);
 
   @override
@@ -52,9 +52,9 @@ class Menu extends StatelessWidget {
               ),
             )),
         SlideTransition(
-          position: slideAnimation,
+          position: slideAnimation!,
           child: ScaleTransition(
-            scale: menuAnimation,
+            scale: menuAnimation!,
             child: Padding(
               padding: const EdgeInsets.only(left: 20.0, top: 30),
               child: Align(

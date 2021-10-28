@@ -5,8 +5,8 @@ import 'package:healthapp/navmenu/menu_dashboard_layout.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
-Box prefs;
-Directory dir;
+late Box prefs;
+Directory? dir;
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   getApplicationDocumentsDirectory().then(
