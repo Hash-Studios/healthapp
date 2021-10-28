@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthapp/activity.dart';
-import 'package:healthapp/dialog_flow.dart';
 import 'package:healthapp/exercise.dart';
 import 'package:healthapp/main.dart' as main;
 import 'package:healthapp/medicines.dart';
@@ -138,10 +137,10 @@ class _HomeState extends State<Home> {
                   ],
                 ),
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      CupertinoPageRoute(
-                          builder: (context) => CuristAssistant()));
+                  // Navigator.push(
+                  //     context,
+                  //     CupertinoPageRoute(
+                  //         builder: (context) => CuristAssistant()));
                 },
               ),
               GestureDetector(
@@ -283,7 +282,7 @@ class _HomeState extends State<Home> {
 
 class ActivityRings extends StatefulWidget {
   const ActivityRings({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -291,8 +290,7 @@ class ActivityRings extends StatefulWidget {
 }
 
 class _ActivityRingsState extends State<ActivityRings> {
-  Pedometer _pedometer;
-  StreamSubscription<int> _subscription;
+  late StreamSubscription<StepCount> _subscription;
   int stepsToday = int.parse(main.prefs.get("stepsToday"));
   @override
   void initState() {
@@ -315,8 +313,7 @@ class _ActivityRingsState extends State<ActivityRings> {
   }
 
   void startListening() {
-    _pedometer = new Pedometer();
-    _subscription = _pedometer.pedometerStream.listen(_onData,
+    _subscription = Pedometer.stepCountStream.listen(_onData,
         onError: _onError, onDone: _onDone, cancelOnError: true);
   }
 
@@ -324,11 +321,11 @@ class _ActivityRingsState extends State<ActivityRings> {
     _subscription.cancel();
   }
 
-  void _onData(int stepCountValue) async {
+  void _onData(StepCount stepCountValue) async {
     setState(() {
-      stepsToday = stepCountValue;
+      stepsToday = stepCountValue.steps;
       main.prefs.put("stepsToday", "$stepCountValue");
-      main.prefs.put("calToday", "${stepCountValue / 3}");
+      main.prefs.put("calToday", "${stepsToday / 3}");
     });
   }
 

@@ -70,10 +70,10 @@ class Profile extends StatelessWidget {
 }
 
 class ListButton extends StatelessWidget {
-  final String text;
-  final Function onTap;
+  final String? text;
+  final Function? onTap;
   const ListButton({
-    Key key,
+    Key? key,
     this.text,
     this.onTap,
   }) : super(key: key);
@@ -85,11 +85,11 @@ class ListButton extends StatelessWidget {
       child: Container(
         color: Color(0xFFEEEEEE),
         child: ListTile(
-          onTap: onTap,
+          onTap: onTap as void Function()?,
           trailing:
-              IconButton(icon: Icon(Icons.chevron_right), onPressed: onTap),
+              IconButton(icon: Icon(Icons.chevron_right), onPressed: onTap as void Function()?),
           title: Text(
-            text,
+            text!,
             style: GoogleFonts.montserrat(
               color: Color(0xFF393E46),
               fontSize: 18,
@@ -104,8 +104,8 @@ class ListButton extends StatelessWidget {
 class TopSection extends StatelessWidget {
   final bool button;
   TopSection({
-    Key key,
-    @required this.button,
+    Key? key,
+    required this.button,
   }) : super(key: key);
 
   @override

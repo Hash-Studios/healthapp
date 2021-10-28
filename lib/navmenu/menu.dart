@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthapp/activity.dart';
-import 'package:healthapp/dialog_flow.dart';
 import 'package:healthapp/exercise.dart';
 import 'package:healthapp/main.dart' as main;
 import 'package:healthapp/medicines.dart';
@@ -10,19 +9,19 @@ import 'package:healthapp/profile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Menu extends StatelessWidget {
-  final Animation<Offset> slideAnimation;
-  final Animation<double> menuAnimation;
-  final int selectedIndex;
+  final Animation<Offset>? slideAnimation;
+  final Animation<double>? menuAnimation;
+  final int? selectedIndex;
   final Function onMenuItemClicked;
   final onMenuTap;
 
   const Menu(
-      {Key key,
-      @required this.onMenuTap,
+      {Key? key,
+      required this.onMenuTap,
       this.slideAnimation,
       this.menuAnimation,
       this.selectedIndex,
-      @required this.onMenuItemClicked})
+      required this.onMenuItemClicked})
       : super(key: key);
 
   @override
@@ -53,9 +52,9 @@ class Menu extends StatelessWidget {
               ),
             )),
         SlideTransition(
-          position: slideAnimation,
+          position: slideAnimation!,
           child: ScaleTransition(
-            scale: menuAnimation,
+            scale: menuAnimation!,
             child: Padding(
               padding: const EdgeInsets.only(left: 20.0, top: 30),
               child: Align(
@@ -170,10 +169,10 @@ class Menu extends StatelessWidget {
                       ),
                       onTap: () {
                         onMenuTap();
-                        Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                                builder: (context) => CuristAssistant()));
+                        // Navigator.push(
+                        //     context,
+                        //     CupertinoPageRoute(
+                        //         builder: (context) => CuristAssistant()));
                       },
                     ),
                     Spacer(flex: 2),

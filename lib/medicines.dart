@@ -5,10 +5,10 @@ import 'package:healthapp/main.dart' as main;
 import 'package:healthapp/profile.dart';
 import 'package:hive/hive.dart';
 
-Box medicines;
-Map morning;
-Map evening;
-Map night;
+late Box medicines;
+Map? morning;
+Map? evening;
+Map? night;
 
 class Medicines extends StatefulWidget {
   @override
@@ -16,9 +16,9 @@ class Medicines extends StatefulWidget {
 }
 
 class _MedicinesState extends State<Medicines> {
-  String timeM;
-  String timeE;
-  String timeN;
+  String? timeM;
+  String? timeE;
+  String? timeN;
   @override
   void initState() {
     medicines = Hive.box('medicines');
@@ -103,7 +103,7 @@ class _MedicinesState extends State<Medicines> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            morning.length != 0
+            morning!.length != 0
                 ? Center(
                     child: Container(
                       padding: EdgeInsets.all(16),
@@ -134,15 +134,15 @@ class _MedicinesState extends State<Medicines> {
                                       fontSize: 14),
                                 ),
                                 onTap: () async {
-                                  TimeOfDay picked = await showTimePicker(
+                                  TimeOfDay? picked = await showTimePicker(
                                     context: context,
                                     initialTime: TimeOfDay.now(),
                                     builder:
-                                        (BuildContext context, Widget child) {
+                                        (BuildContext context, Widget? child) {
                                       return MediaQuery(
                                         data: MediaQuery.of(context).copyWith(
                                             alwaysUse24HourFormat: true),
-                                        child: child,
+                                        child: child!,
                                       );
                                     },
                                   );
@@ -163,11 +163,11 @@ class _MedicinesState extends State<Medicines> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              for (var text in morning.keys)
+                              for (var text in morning!.keys)
                                 Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Text(
-                                    "- $text x${morning[text]}",
+                                    "- $text x${morning![text]}",
                                     style: GoogleFonts.montserrat(
                                         fontWeight: FontWeight.w300,
                                         fontSize: 20),
@@ -236,15 +236,15 @@ class _MedicinesState extends State<Medicines> {
                                       fontSize: 14),
                                 ),
                                 onTap: () async {
-                                  TimeOfDay picked = await showTimePicker(
+                                  TimeOfDay? picked = await showTimePicker(
                                     context: context,
                                     initialTime: TimeOfDay.now(),
                                     builder:
-                                        (BuildContext context, Widget child) {
+                                        (BuildContext context, Widget? child) {
                                       return MediaQuery(
                                         data: MediaQuery.of(context).copyWith(
                                             alwaysUse24HourFormat: true),
-                                        child: child,
+                                        child: child!,
                                       );
                                     },
                                   );
@@ -264,7 +264,7 @@ class _MedicinesState extends State<Medicines> {
                       ),
                     ),
                   ),
-            evening.length != 0
+            evening!.length != 0
                 ? Center(
                     child: Container(
                       padding: EdgeInsets.all(16),
@@ -295,15 +295,15 @@ class _MedicinesState extends State<Medicines> {
                                       fontSize: 14),
                                 ),
                                 onTap: () async {
-                                  TimeOfDay picked = await showTimePicker(
+                                  TimeOfDay? picked = await showTimePicker(
                                     context: context,
                                     initialTime: TimeOfDay.now(),
                                     builder:
-                                        (BuildContext context, Widget child) {
+                                        (BuildContext context, Widget? child) {
                                       return MediaQuery(
                                         data: MediaQuery.of(context).copyWith(
                                             alwaysUse24HourFormat: true),
-                                        child: child,
+                                        child: child!,
                                       );
                                     },
                                   );
@@ -324,11 +324,11 @@ class _MedicinesState extends State<Medicines> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              for (var text in evening.keys)
+                              for (var text in evening!.keys)
                                 Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Text(
-                                    "- $text x${evening[text]}",
+                                    "- $text x${evening![text]}",
                                     style: GoogleFonts.montserrat(
                                         fontWeight: FontWeight.w300,
                                         fontSize: 20),
@@ -370,15 +370,15 @@ class _MedicinesState extends State<Medicines> {
                                       fontSize: 14),
                                 ),
                                 onTap: () async {
-                                  TimeOfDay picked = await showTimePicker(
+                                  TimeOfDay? picked = await showTimePicker(
                                     context: context,
                                     initialTime: TimeOfDay.now(),
                                     builder:
-                                        (BuildContext context, Widget child) {
+                                        (BuildContext context, Widget? child) {
                                       return MediaQuery(
                                         data: MediaQuery.of(context).copyWith(
                                             alwaysUse24HourFormat: true),
-                                        child: child,
+                                        child: child!,
                                       );
                                     },
                                   );
@@ -398,7 +398,7 @@ class _MedicinesState extends State<Medicines> {
                       ),
                     ),
                   ),
-            night.length != 0
+            night!.length != 0
                 ? Center(
                     child: Container(
                       padding: EdgeInsets.all(16),
@@ -429,15 +429,15 @@ class _MedicinesState extends State<Medicines> {
                                       fontSize: 14),
                                 ),
                                 onTap: () async {
-                                  TimeOfDay picked = await showTimePicker(
+                                  TimeOfDay? picked = await showTimePicker(
                                     context: context,
                                     initialTime: TimeOfDay.now(),
                                     builder:
-                                        (BuildContext context, Widget child) {
+                                        (BuildContext context, Widget? child) {
                                       return MediaQuery(
                                         data: MediaQuery.of(context).copyWith(
                                             alwaysUse24HourFormat: true),
-                                        child: child,
+                                        child: child!,
                                       );
                                     },
                                   );
@@ -458,11 +458,11 @@ class _MedicinesState extends State<Medicines> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              for (var text in night.keys)
+                              for (var text in night!.keys)
                                 Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Text(
-                                    "- $text x${night[text]}",
+                                    "- $text x${night![text]}",
                                     style: GoogleFonts.montserrat(
                                         fontWeight: FontWeight.w300,
                                         fontSize: 20),
@@ -504,15 +504,15 @@ class _MedicinesState extends State<Medicines> {
                                       fontSize: 14),
                                 ),
                                 onTap: () async {
-                                  TimeOfDay picked = await showTimePicker(
+                                  TimeOfDay? picked = await showTimePicker(
                                     context: context,
                                     initialTime: TimeOfDay.now(),
                                     builder:
-                                        (BuildContext context, Widget child) {
+                                        (BuildContext context, Widget? child) {
                                       return MediaQuery(
                                         data: MediaQuery.of(context).copyWith(
                                             alwaysUse24HourFormat: true),
-                                        child: child,
+                                        child: child!,
                                       );
                                     },
                                   );
@@ -551,7 +551,7 @@ class MedicinePanel extends StatefulWidget {
 }
 
 class _MedicinePanelState extends State<MedicinePanel> {
-  Item time;
+  Item? time;
   TextEditingController medicineName = TextEditingController();
   TextEditingController quantity = TextEditingController();
   List<Item> users = <Item>[
@@ -624,7 +624,7 @@ class _MedicinePanelState extends State<MedicinePanel> {
             child: DropdownButton<Item>(
               hint: Text("Select item", style: GoogleFonts.montserrat()),
               value: time,
-              onChanged: (Item value) {
+              onChanged: (Item? value) {
                 setState(() {
                   time = value;
                 });
@@ -655,17 +655,17 @@ class _MedicinePanelState extends State<MedicinePanel> {
               onPressed: () {
                 if (medicineName.text != "" || medicineName.text != null) {
                   if (quantity.text != "" || quantity.text != null) {
-                    if (time.name != "" || time != null) {
-                      if (time.name == "Morning") {
-                        morning[medicineName.text.toString()] =
+                    if (time!.name != "" || time != null) {
+                      if (time!.name == "Morning") {
+                        morning![medicineName.text.toString()] =
                             quantity.text.toString();
                         medicines.put('morning', morning);
-                      } else if (time.name == "Evening") {
-                        evening[medicineName.text.toString()] =
+                      } else if (time!.name == "Evening") {
+                        evening![medicineName.text.toString()] =
                             quantity.text.toString();
                         medicines.put('evening', evening);
-                      } else if (time.name == "Night") {
-                        night[medicineName.text.toString()] =
+                      } else if (time!.name == "Night") {
+                        night![medicineName.text.toString()] =
                             quantity.text.toString();
                         medicines.put('night', night);
                       }

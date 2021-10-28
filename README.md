@@ -46,6 +46,7 @@ We have also added complex animations.
 We have added support and contact helplines.
 We have added medicines database and notification.
 We have added new illustrations.
+We have added null-safety.
 
 ## Challenges we ran into
 Complex yet engaging UI was needed, to lift the mood of the user so that they feel good after using the app. So it was a challenge to actually create this UI with excellent user experience.
