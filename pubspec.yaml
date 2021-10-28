@@ -23,7 +23,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_dialogflow: ^0.1.3
   google_fonts: ^1.1.0
   hive: ^1.4.1+1
   hive_flutter: ^0.3.0+1

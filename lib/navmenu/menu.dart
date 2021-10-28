@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthapp/activity.dart';
-import 'package:healthapp/dialog_flow.dart';
 import 'package:healthapp/exercise.dart';
 import 'package:healthapp/main.dart' as main;
 import 'package:healthapp/medicines.dart';
@@ -170,10 +169,10 @@ class Menu extends StatelessWidget {
                       ),
                       onTap: () {
                         onMenuTap();
-                        Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                                builder: (context) => CuristAssistant()));
+                        // Navigator.push(
+                        //     context,
+                        //     CupertinoPageRoute(
+                        //         builder: (context) => CuristAssistant()));
                       },
                     ),
                     Spacer(flex: 2),
